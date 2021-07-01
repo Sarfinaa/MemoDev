@@ -42,6 +42,7 @@ const handleChange=(evt)=>{
   return (
     <div  className="code-edit-container">
       <textarea 
+      placeholder="Type your code here..."
       id="editing"
         className="code-input"
         onScroll={sync_scroll}
