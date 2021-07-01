@@ -1,6 +1,4 @@
 import './App.css';
-import Input from './Components/Input/Input';
-import Inputs from './Components/Input/Inputs'; 
 import Input1 from './Components/Input1/Input1' ;
 function App() {
   return (
