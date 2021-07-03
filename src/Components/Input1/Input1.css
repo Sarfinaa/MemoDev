@@ -1,14 +1,19 @@
 /* Please see the article */
-
+.code-edit-container{
+  position: relative;
+}
 #editing, #highlighting {
   /* Both elements need the same text and space styling so they are directly on top of each other */
   margin: 10px;
   padding: 10px;
   border: 0;
-  width: calc(100% - 32px);
+  width: calc(100% - 40%);
   height: 150px;
   border-radius: 10px;
-  
+  resize: none;
+}
+#editing{
+  padding: 0 10px;
 }
 textarea:focus{
   outline: none;
@@ -28,7 +33,10 @@ textarea:focus{
   left: 0;
 }
 
-
+.hello{
+  position: relative;
+  background-color: red;
+}
 /* Move the textarea in front of the result */
 
 #editing {
@@ -105,9 +113,7 @@ pre[class*="language-"] {
   padding: .4em .8em;
   margin: .5em 0;
   overflow: auto;
-  /* background: url('data:image/svg+xml;charset=utf-8,<svg%20version%3D"1.1"%20xmlns%3D"http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg"%20width%3D"100"%20height%3D"100"%20fill%3D"rgba(0%2C0%2C0%2C.2)">%0D%0A<polygon%20points%3D"0%2C50%2050%2C0%200%2C0"%20%2F>%0D%0A<polygon%20points%3D"0%2C100%2050%2C100%20100%2C50%20100%2C0"%20%2F>%0D%0A<%2Fsvg>');
-  background-size: 1em 1em; - WebCoder49*/
-  background: black; /* - WebCoder49 */
+  background: black;
 }
 
 code[class*="language-"] {
