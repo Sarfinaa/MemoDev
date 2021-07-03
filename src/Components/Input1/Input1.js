@@ -61,14 +61,14 @@ const option={
     "name"
   ]
 }
-const fuzzySearch = new Fuse(options, option);
-fuse.search(pattern)
+//const fuzzySearch = new Fuse(options, option);
+//fuse.search(pattern)
   return (
     <>
     <SelectSearch
         options={options}
         search
-        filterOptions={fuzzySearch}
+       // filterOptions={fuzzySearch}
         placeholder="Syntax"
     />
    
