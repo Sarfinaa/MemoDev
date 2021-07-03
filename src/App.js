@@ -1,14 +1,20 @@
 import './App.css';
-import Input1 from './Components/Input1/Input1' ;
+import Home from './Components/Home/Home';
+import NavBar from './Components/Navbar/index';
+import New from './Components/New/New';
+import {BrowserRouter as Router,Switch,Route,Redirect} from 'react-router-dom';
 function App() {
   return (
-    <div className="app">
-      <div className="a">
-      <Input1 language="javascript"/>
-      </div>
-  
+    <Router>
+       <NavBar/>
+       <Switch>
+           <Route path='/' exact component={()=><Redirect to="/Home"/>}/>
+           <Route path='/Home' exact component={Home}/> 
+           <Route path='/New' exact component={New}/>
 
-    </div>
+       </Switch>
+        
+        </Router>
   );
 }
 

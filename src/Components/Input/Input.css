@@ -33,10 +33,6 @@ textarea:focus{
   left: 0;
 }
 
-.hello{
-  position: relative;
-  background-color: red;
-}
 /* Move the textarea in front of the result */
 
 #editing {
@@ -79,15 +75,15 @@ p code {
 
 /* Syntax Highlighting from prism.js starts below, partly modified: */
 
-/* PrismJS 1.23.0
-https://prismjs.com/download.html#themes=prism-funky&languages=markup */
+/* PrismJS 1.24.1
+https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript+actionscript+autohotkey+bash+basic+batch+c+csharp+cpp+cfscript+chaiscript+css-extras+csv+dart+gcode+git+go+graphql+groovy+haml+haskell+hcl+http+j+java+json+json5+jsonp+jsstacktrace+js-templates+kotlin+livescript+markup-templating+mongodb+moonscript+opencl+perl+php+php-extras+powerquery+powershell+properties+purescript+python+qsharp+jsx+tsx+regex+ruby+scss+shell-session+solidity+iecst+swift+typescript+unrealscript&plugins=line-numbers+keep-markup */
 /**
- * prism.js Funky theme
- * Based on “Polyfilling the gaps” talk slides http://lea.verou.me/polyfilling-the-gaps/
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
  * @author Lea Verou
  */
 
-code[class*="language-"],
+/* code[class*="language-"],
 pre[class*="language-"] {
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   font-size: 1em;
@@ -108,7 +104,6 @@ pre[class*="language-"] {
   hyphens: none;
 }
 
-/* Code blocks */
 pre[class*="language-"] {
   padding: .4em .8em;
   margin: .5em 0;
@@ -122,7 +117,7 @@ code[class*="language-"] {
   box-shadow: -.3em 0 0 .3em black, .3em 0 0 .3em black;
 }
 
-/* Inline code */
+
 :not(pre) > code[class*="language-"] {
   padding: .2em;
   border-radius: .3em;
@@ -198,7 +193,7 @@ code[class*="language-"] {
   color: red;
 }
 
-/* Plugin styles: Diff Highlight */
+
 pre.diff-highlight.diff-highlight > code .token.deleted:not(.prefix),
 pre > code.diff-highlight.diff-highlight .token.deleted:not(.prefix) {
   background-color: rgba(255, 0, 0, .3);
@@ -209,6 +204,6 @@ pre.diff-highlight.diff-highlight > code .token.inserted:not(.prefix),
 pre > code.diff-highlight.diff-highlight .token.inserted:not(.prefix) {
   background-color: rgba(0, 255, 128, .3);
   display: inline;
-}
+} */
 
 /* End of prism.js syntax highlighting*/

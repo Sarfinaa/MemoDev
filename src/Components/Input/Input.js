@@ -1,15 +1,9 @@
-import React, { useState, useEffect ,useRef} from "react";
-import Prism from "prismjs";
-import {Helmet} from "react-helmet";
-import $ from 'jquery';
-import SelectSearch from 'react-select-search';
-import Fuse from 'fuse.js';
-import './search.css';
-import './Input1.css';
-function Input1(props) {
+import React, { useState, useEffect} from "react";
+import Prism from 'prismjs';
+import './Input.css';
+import 'prismjs/themes/prism.css'
+function Input({language}) {
   const [content, setContent] = useState("");
-  const scroll = useRef(null);
-
   const  sync_scroll=()=> {
     let element = document.querySelector("#editing");
     let result_element = document.querySelector("#highlighting");
@@ -20,8 +14,6 @@ function Input1(props) {
   const handleKeyDown = (evt) => {
     let value = content,
       selStartPos = evt.currentTarget.selectionStart;
-
-    console.log(evt.currentTarget);
 
     // handle 4-spce indent on
     if (evt.key === "Tab") {
@@ -46,32 +38,14 @@ function Input1(props) {
     // });
   
     Prism.highlightAll();
-  }, [props.language, content]);
+  }, [language, content]);
 const handleChange=(evt)=>{
   sync_scroll();
   setContent(evt.target.value);
 }
-const options=[
-  { value: 's', name: 'Small' },
-  { value: 'm', name: 'Medium' },
-  { value: 'l', name: 'Large' },
-];
-const option={
-  keys: [
-    "name"
-  ]
-}
-//const fuzzySearch = new Fuse(options, option);
-//fuse.search(pattern)
+
   return (
     <>
-    <SelectSearch
-        options={options}
-        search
-       // filterOptions={fuzzySearch}
-        placeholder="Syntax"
-    />
-   
     <div className="code-edit-container">
       <textarea 
       placeholder="Type your code here..."
@@ -83,8 +57,8 @@ const option={
         onKeyDown={handleKeyDown}
       />
       <pre aria-hidden="true" id="highlighting" className="code-output">
-        <code id="highlighting-content" className={`language-${props.language}`}>{content}</code>
-      </pre>
+        <code id="highlighting-content" className={`language-C`}>{content}</code>
+      </pre>  
       
   </div>
     </>
@@ -92,4 +66,4 @@ const option={
   );
 };
 
-export default Input1
+export default Input;
