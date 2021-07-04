@@ -1,3 +1,7 @@
 .container-top{
     display: flex;
 }
+.text1{
+    display: inline-block;
+    vertical-align: middle;
+}

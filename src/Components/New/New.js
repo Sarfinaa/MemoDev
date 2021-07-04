@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import Input from "../Input/Input";
+import Input1 from "../Input/Input";
 import { List } from "./List";
+import { Input } from "@material-ui/core";
 import SelectSearch from "react-select-search";
 import Fuse from "fuse.js";
 import "./search.css";
@@ -33,11 +34,13 @@ function New() {
   return (
     <div className="container">
       <div className="container-top">
+        <div  className="renderedtext">
         {textlen == 0 || textlen > 1 ? (
-          <div>Select what you'd like to remember</div>
+         "Select what you'd like to remember"
         ) : (
-          <div>Paste or type in your code</div>
+          "Paste or type in your code"
         )}
+        </div>
         <SelectSearch
           options={List}
           search
@@ -47,8 +50,12 @@ function New() {
           onChange={handleSelectChange}
         />
       </div>
-
-      <Input changelen={(len) => setTextlen(len)} language={language} />
+      <Input1 changelen={(len) => setTextlen(len)} language={language} />
+      <h3 className="text1">This card is about </h3>
+      <Input placeholder="language" style={{width:"9%",fontSize:"small",margin:"0px 5px"}}inputProps={{ 'aria-label': 'description' }} />
+      <h3 className="text1">and learned how to </h3>
+      <Input placeholder="what you learned" style={{width:"9%",fontSize:"small",margin:"0px 5px"}}inputProps={{ 'aria-label': 'description' }} />
+<button style={{display:"block"}}>Save</button>
     </div>
   );
 }

@@ -70,11 +70,11 @@ return (
         <code id="highlighting-content" className={`language-${language}`}>{content}</code>
       </pre>  
   </div>
-  <p>Note:Selection of code must be continuous!!</p>
+  <p className="para">Note:Selection of code must be continuous!!</p>
   {selected.length>0&&<div className="selectedtext">Selected Text:{selected}</div>}
-  <button onClick={displaySelect}>Select</button>
+  <div className="button-container">  <button onClick={displaySelect}>Select</button>
   <button onClick={unSelect}>Unselect</button>
-
+  </div>
   
     </>
     
