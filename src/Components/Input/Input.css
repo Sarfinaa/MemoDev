@@ -1,7 +1,3 @@
-/* Please see the article */
-.code-edit-container{
-  position: relative;
-}
 #editing, #highlighting {
   /* Both elements need the same text and space styling so they are directly on top of each other */
   margin: 10px;
@@ -12,9 +8,7 @@
   border-radius: 10px;
   resize: none;
 }
-#editing{
-  padding: 0 10px;
-}
+
 textarea:focus{
   outline: none;
 }
@@ -72,6 +66,18 @@ p code {
   color: #111;
 }
 
+/* Please see the article */
+.code-edit-container {
+  position: relative;
+}
+
+#editing{
+  position: relative;
+}
+
+.selectedtext{
+  position: relative;
+}
 
 /* Syntax Highlighting from prism.js starts below, partly modified: */
 

@@ -71,7 +71,7 @@ return (
       </pre>  
   </div>
   <p>Note:Selection of code must be continuous!!</p>
-  {selected.length>0&&<div>Selected Text:{selected}</div>}
+  {selected.length>0&&<div className="selectedtext">Selected Text:{selected}</div>}
   <button onClick={displaySelect}>Select</button>
   <button onClick={unSelect}>Unselect</button>
 

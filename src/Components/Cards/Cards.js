@@ -1,10 +1,15 @@
 import React from 'react'
+import Navbar from '../Navbar'
 
 function Cards() {
     return (
-        <div>
-            hi
-        </div>
+        <>
+
+            <div className="container">
+
+
+            </div>
+        </>
     )
 }
 
