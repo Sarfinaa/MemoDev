@@ -7,6 +7,7 @@ import './search.css';
 import './New.css';
 function New() {
     const [language,setLanguage]=useState("Plain Text");
+    const [textlen,setTextlen]=useState(0);
     const options={
         keys: [
           "name"
@@ -15,7 +16,7 @@ function New() {
     const fuzzySearch=()=>{
         const fuse = new Fuse(List, options);
         return (searchValue)=>{
-          if(searchValue.length==0){
+          if(searchValue.length===0){
             return List;
           }else{
           let arr=[];
@@ -30,8 +31,15 @@ function New() {
       setLanguage(language);
       }
     return (
-        <div>
-              <SelectSearch
+        <div className="container">
+          <div className="container-top">
+            {textlen==0||textlen>1?<div>
+              Select what you'd like to remember
+            </div>:
+            <div>
+              Paste or type in your code
+              </div>}
+          <SelectSearch
         options={List}
         search
         value={language}
@@ -39,7 +47,9 @@ function New() {
         placeholder="Select Language"
         onChange={handleSelectChange}
     /> 
-    <Input language={language}/>
+          </div>
+        
+    <Input changelen={len=>setTextlen(len)}language={language}/>
         </div>
     )
 }
