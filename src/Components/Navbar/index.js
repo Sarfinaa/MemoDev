@@ -1,5 +1,6 @@
 import React from "react";
 import { FaBars } from "react-icons/fa";
+import Cards from "../Cards/Cards";
 import {
   Nav,
   NavbarContainer,
@@ -19,7 +20,8 @@ const Navbar = ({ toggle }) => {
           <NavLogo to="/">MemoCode</NavLogo>
           <NavMenu>
             <NavItem>
-              <NavLinks to="cards">Cards</NavLinks>
+              <NavLinks to="/Cards">Cards</NavLinks>
+              
             </NavItem>
             <NavItem>
               <NavLinks to="Train">Train</NavLinks>
