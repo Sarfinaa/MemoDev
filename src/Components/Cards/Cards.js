@@ -5,7 +5,7 @@ function Cards() {
     return (
         <>
 
-            <div className="container">
+            <div className="container-cards">
 
 
             </div>
