@@ -36,9 +36,9 @@ function New() {
       <div className="container-top">
         <div  className="renderedtext">
         {textlen == 0 || textlen > 1 ? (
-         "Select what you'd like to remember"
+        <h2>Select what you'd like to remember</h2> 
         ) : (
-          "Paste or type in your code"
+          <h2>Paste or type in your code</h2>
         )}
         </div>
         <SelectSearch

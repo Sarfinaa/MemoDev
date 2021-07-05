@@ -1,6 +1,23 @@
+.container{
+    width: 70%;
+    margin: auto;
+    margin-top: 40px;
+    /* background-color: rebeccapurple; */
+}
 .container-top{
     display: flex;
+    /* background-color: red; */
+    padding: 4px;
+    justify-content: space-between;
 }
+.renderedtext{
+    color: rgb(89,105,126);
+    margin-top: 5px;
+    margin-left: 5px;
+
+}
+
+
 .text1{
     display: inline-block;
     vertical-align: middle;
