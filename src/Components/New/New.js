@@ -10,6 +10,7 @@ import "./New.css";
 function New() {
   const [language, setLanguage] = useState("Plain Text");
   const [textlen, setTextlen] = useState(0);
+  const [selected,setSelected]=useState("");
   const options = {
     keys: ["name"],
   };
@@ -50,7 +51,7 @@ function New() {
           onChange={handleSelectChange}
         />
       </div>
-        <Input1 changelen={(len) => setTextlen(len)} language={language} />
+        <Input1 changelen={(len) => setTextlen(len)} language={language} getSelected={select=>setSelected(select)}/>
         <h3 className="text1">This card is about </h3>
         <Input
           placeholder="language"
