@@ -6,7 +6,7 @@ import { IoMdCreate } from 'react-icons/io';
 import {useSelector} from "react-redux";
 
 function Cards() {
-    const cards = useSelector(state => state.cards)
+    const cards = useSelector(state => state.cards.cards)
     console.log(cards)
     return (
         <div className="whole-container">
@@ -21,14 +21,10 @@ function Cards() {
                         <h4>Create new card</h4>
                     </div>
                     <div className="cardholder">
-                      <Card />
-                      <Card />
-                      <Card />
-                      <Card />
-                      <Card />
-                      <Card />
-                      <Card />
-                      <Card />
+                      {cards.map(card =>{
+                          <Card card={card}/>
+                      })}
+                   
                     </div>
                 </div>
                 <div className="d2">
