@@ -1,6 +1,9 @@
-import React from "react";
+import React,{useEffect,useState} from "react";
 import { FaBars } from "react-icons/fa";
 import Cards from "../Cards/Cards";
+import {Link,useHistory,useLocation} from 'react-router-dom';
+import {useDispatch} from 'react-redux';
+import decode from 'jwt-decode';
 import {
   Nav,
   NavbarContainer,
@@ -13,6 +16,25 @@ import {
 } from "./NavbarElements";
 
 const Navbar = ({ toggle }) => {
+   const history=useHistory();
+    const location =useLocation();
+    const dispatch=useDispatch();
+      const [user,setUser]=useState(JSON.parse(localStorage.getItem('profile')));
+        const logout=()=>{
+        dispatch({type:'LOGOUT'});
+        history.push('/');
+        setUser(null);
+    }
+       useEffect(()=>{
+const token=user?.token;
+if(token){
+    const decodedToken=decode(token);
+    //when token expires we logout
+    if(decodedToken.exp*1000<new Date().getTime()) logout();
+}
+setUser(JSON.parse(localStorage.getItem('profile')));
+    },[location])
+
   return (
     <>
       <Nav>
@@ -28,7 +50,11 @@ const Navbar = ({ toggle }) => {
             </NavItem>
           </NavMenu>
           <NavBtn>
-            <NavBtnLink to="/auth">Sign In</NavBtnLink>
+            {user? (
+ <NavBtnLink to="/" onClick={logout}>LOGOUT</NavBtnLink>
+            ):(
+               <NavBtnLink to="/auth">SIGN IN</NavBtnLink>
+            )}
           </NavBtn>
         </NavbarContainer>
       </Nav>
