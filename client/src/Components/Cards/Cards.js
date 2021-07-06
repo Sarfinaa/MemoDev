@@ -3,10 +3,13 @@ import Navbar from '../Navbar'
 import "./Cards.css"
 import Card from './Card/Card'
 import { IoMdCreate } from 'react-icons/io';
+import {useSelector} from "react-redux";
 
 function Cards() {
+    const cards = useSelector(state => state.cards)
+    console.log(cards)
     return (
-        <>
+        <div className="whole-container">
             <div>
                 <button className="train-btn">
                     Train Now
@@ -18,13 +21,14 @@ function Cards() {
                         <h4>Create new card</h4>
                     </div>
                     <div className="cardholder">
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
                     </div>
                 </div>
                 <div className="d2">
@@ -39,7 +43,7 @@ function Cards() {
                 </div>
 
             </div>
-        </>
+        </div>
     )
 }
 

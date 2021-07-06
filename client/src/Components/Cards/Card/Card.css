@@ -1,15 +1,18 @@
 .cards-component{
-    width: 315px;
+    width: 90%;
     border-radius: 7px;
     height: 85px;
     background: orchid;
-    margin-top: 10px;
+    margin: 2% 5%;
 
     padding: 20px 20px;
     
     /* display: flex;
     align-items: center;
     justify-content: center; */
+}
+.cards-component:hover{
+    background: lightgreen;
 }
 .component-heading{
     font-weight: 200;
