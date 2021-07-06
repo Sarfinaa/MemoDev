@@ -1,4 +1,4 @@
-import {CREATE} from '../constants/actionTypes';
+import {CREATE,FETCH_ALL} from '../constants/actionTypes';
 const reducer =(state={//isLoading:true,
     cards:[]},action)=>{
     switch(action.type){
@@ -7,12 +7,10 @@ const reducer =(state={//isLoading:true,
     //   case FETCH_BY_SEARCH: return {...state,cards:action.payload};
     //   case FETCH_POST: return {...state,post:action.payload};
     
-        // case FETCH_ALL: return{
-        //   ...state,
-        //  cards:action.payload.data,
-        //  currentPage:action.payload.currentPage,
-        //  numberOfPages:action.payload.numberOfPages
-        // } 
+        case FETCH_ALL: return{
+          ...state,
+         cards:action.payload.data
+        } 
         case CREATE: return {...state,cards:[...state.cards,action.payload]};
         // case DELETE: return {...state,cards:state.cards.filter(post=>post._id!==action.payload)};
         // case LIKE: return {...state,cards:state.cards.map((post)=>post._id===action.payload._id?action.payload:post )}; 
