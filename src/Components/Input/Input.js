@@ -4,9 +4,7 @@ import "./Input.css";
 import "prismjs/themes/prism.css";
 //import 'prismjs/components/prism-java'
 import $ from "jquery";
-function Input({ language, changelen,getSelected}) {
-  console.log("Input component");
-
+function Input({ language, changelen,getSelected,getText}) {
   const [content, setContent] = useState("");
   const [selected, setSelected] = useState("");
   const sync_scroll = () => {
@@ -38,6 +36,7 @@ function Input({ language, changelen,getSelected}) {
     sync_scroll();
     setContent(evt.target.value);
     changelen(content.length);
+    getText(content);
   };
 
   useEffect(() => {
