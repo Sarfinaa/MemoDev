@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from "react";
 import Input1 from "../Input/Input";
 import { List } from "./List";
+import { useHistory } from "react-router";
 import { Input } from "@material-ui/core";
 import SelectSearch from "react-select-search";
 import Fuse from "fuse.js";
@@ -8,10 +9,12 @@ import "./search.css";
 import "./New.css";
 
 function New() {
+  const history=useHistory();
   const [language, setLanguage] = useState("Plain Text");
   const [textlen, setTextlen] = useState(0);
   const [text,setText]=useState("");
   const [selected,setSelected]=useState("");
+  const [error,setError]=useState(false);
   const [postData,setPostData]=useState({
     language:'',
     wul:'',
@@ -22,7 +25,9 @@ function New() {
     keys: ["name"],
   };
 
-const saveChange=()=>{
+const saveChange=(e)=>{
+  if(selected.length===0) setError(true);
+  else setError(false) ;
 setPostData({...postData,selected:selected,text:text});
 
 
@@ -64,23 +69,26 @@ setPostData({...postData,selected:selected,text:text});
           onChange={handleSelectChange}
         />
       </div>
-        <Input1 changelen={(len) => setTextlen(len)} getText={text=>setText(text)} language={language} getSelected={select=>setSelected(select)}/>
+        <Input1 setError={setError} changelen={(len) => setTextlen(len)} getText={text=>setText(text)} language={language} getSelected={select=>setSelected(select)}/>
         <h3 className="text1">This card is about </h3>
-        <Input
+        <form style={{display:'inline'}}>
+        <Input required
           placeholder="language"
          onChange={(e)=>setPostData({...postData,language:e.target.value})}
           style={{ width: "9%", fontSize: "small", margin: "0px 5px" }}
           inputProps={{ "aria-label": "description" }}
         />
         <h3 className="text1">and learned how to </h3>
-        <Input
+        <Input required
           placeholder="what you learned"
           onChange={(e)=>setPostData({...postData,wul:e.target.value})}
           style={{ width: "14%", fontSize: "small", margin: "0px 5px" }}
           inputProps={{ "aria-label": "description" }}
         />
         <button className="button3" onClick={saveChange}>Save</button>
-       {/* {console.log(postData)} */}
+        </form>
+        {error&&<div>error</div>}
+       {console.log(postData)}
     </div>
   );
 }
