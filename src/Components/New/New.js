@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Input1 from "../Input/Input";
 import { List } from "./List";
 import { Input } from "@material-ui/core";
@@ -8,12 +8,20 @@ import "./search.css";
 import "./New.css";
 
 function New() {
+  console.log("new component");
   const [language, setLanguage] = useState("Plain Text");
   const [textlen, setTextlen] = useState(0);
   const [selected,setSelected]=useState("");
+  const [postData,setPostData]=useState({
+    language:'',
+    wul:'',
+    selected:'',
+     text:''
+        });
   const options = {
     keys: ["name"],
   };
+//setPostData({...postData,selected:selected});
 
   const fuzzySearch = () => {
     const fuse = new Fuse(List, options);
@@ -51,22 +59,25 @@ function New() {
           onChange={handleSelectChange}
         />
       </div>
-        <Input1 changelen={(len) => setTextlen(len)} language={language} getSelected={select=>setSelected(select)}/>
+        <Input1 changelen={(len) => setTextlen(len)}  language={language} getSelected={select=>setSelected(select)}/>
         <h3 className="text1">This card is about </h3>
         <Input
           placeholder="language"
+         onChange={(e)=>setPostData({...postData,language:e.target.value})}
           style={{ width: "9%", fontSize: "small", margin: "0px 5px" }}
           inputProps={{ "aria-label": "description" }}
         />
         <h3 className="text1">and learned how to </h3>
         <Input
           placeholder="what you learned"
-          style={{ width: "9%", fontSize: "small", margin: "0px 5px" }}
+          onChange={(e)=>setPostData({...postData,wul:e.target.value})}
+          style={{ width: "14%", fontSize: "small", margin: "0px 5px" }}
           inputProps={{ "aria-label": "description" }}
         />
         <button className="button3">Save</button>
+        {console.log(postData)}
     </div>
   );
 }
 
-export default New;
+export default React.memo(New);

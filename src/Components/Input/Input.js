@@ -5,6 +5,8 @@ import "prismjs/themes/prism.css";
 //import 'prismjs/components/prism-java'
 import $ from "jquery";
 function Input({ language, changelen,getSelected}) {
+  console.log("Input component");
+
   const [content, setContent] = useState("");
   const [selected, setSelected] = useState("");
   const sync_scroll = () => {
@@ -96,4 +98,4 @@ function Input({ language, changelen,getSelected}) {
   );
 }
 
-export default Input;
+export default React.memo(Input);
