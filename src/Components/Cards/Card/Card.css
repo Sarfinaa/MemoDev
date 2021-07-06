@@ -1,0 +1,16 @@
+.cards-component{
+    width: 315px;
+    border-radius: 7px;
+    height: 85px;
+    background: orchid;
+    margin-top: 10px;
+
+    padding: 20px 20px;
+    
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+.component-heading{
+    font-weight: 200;
+}

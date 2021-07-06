@@ -1,1 +1,104 @@
-.container-cards
+.container-cards{
+    background-color: brown;
+    max-width: 1302px;
+    height: 570px;
+    margin-left: 117px;
+    display: flex;
+}
+.d1{
+    height: 570px;
+    width: 325px;
+    background: olivedrab;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+
+}
+.d2{
+    height: 570px;
+    width: 977px;
+    background: orange;
+    position: relative;
+}
+.create-card{
+    width: 315px;
+    border-radius: 7px;
+    height: 50px;
+    background: orchid;
+    margin-top: 10px;
+    text-transform: uppercase;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.make-function{
+    width: 977px;
+    height: 60px;
+    background: cornflowerblue;
+    display: flex;
+    padding-top: 12px;
+    padding-left: 10px;
+}
+.language{
+
+   height: 25px;
+   width: 45px;
+    background: blue;
+    border-radius: 4px;
+    padding: 3px 12px;
+    
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 7px;
+    margin-left: 5px;
+   
+
+   
+}
+.card-btn-container{
+    width: 977px;
+    height: 60px;
+    background: pink;
+    position: absolute;
+    bottom: 0%;
+}
+.card-btn{
+    margin-top: 10px;
+   margin-left: 10px;
+    color: #3f3d56;
+    background-color: #1beca1;
+    padding: 13px 30px;
+    border-radius: 5px;
+    display: inline-block;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 700;
+     border: none;
+    font-size: .8125rem;
+
+}
+.train-btn{
+    margin: 15px 0;
+    margin-left: 117px;
+    color: #3f3d56;
+    background-color: #1beca1;
+    padding: 13px 30px;
+    border-radius: 5px;
+    display: inline-block;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 700;
+     border: none;
+    font-size: .8125rem;
+}
+.cardholder{
+    overflow-y: scroll;
+}
+IoMdCreate{
+    margin-right: 10px;
+}
