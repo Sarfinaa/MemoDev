@@ -39,14 +39,13 @@ setUser(JSON.parse(localStorage.getItem('profile')));
     <>
       <Nav>
         <NavbarContainer>
-          <NavLogo to="/">MemoCode</NavLogo>
+        {user?(<NavLogo to="/cards">MemoCode</NavLogo>):(<NavLogo to="/">MemoCode</NavLogo>)}
           <NavMenu>
             <NavItem>
-              <NavLinks to="/Cards">Cards</NavLinks>
-              
+             {user&& <NavLinks to="/Cards">Cards</NavLinks>}
             </NavItem>
             <NavItem>
-              <NavLinks to="Train">Train</NavLinks>
+{user&&<NavLinks to="Train">Train</NavLinks>}
             </NavItem>
           </NavMenu>
           <NavBtn>

@@ -14,8 +14,8 @@ res.status(409).json({message:error.message});
 
  export const getCards= async (req,res)=>{
     try{
-                   const cards=await PostCard.find()
-           //const cards=await PostCard.find({creator:req.userId})
+                  //const cards=await PostCard.find()
+          const cards=await PostCard.find({creator:req.userId})
 res.status(200).json({data:cards});
 } catch(error){ 
 res.status(404).json({message:error.message});

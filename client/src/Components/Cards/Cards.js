@@ -27,7 +27,7 @@ dispatch(getCards());
                     </div>
                     <div className="cardholder">
                       {cards.map(card =>(                    
-                          <Card key={card._id} i card={card}/>
+                          <Card key={card._id} card={card}/>
                       ))}
                    
                     </div>

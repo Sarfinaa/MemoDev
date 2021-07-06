@@ -24,6 +24,14 @@ function New() {
     selected:'',
      text:''
         });
+        const clear=()=>{
+          setPostData({
+            language:'',
+    wul:'',
+    selected:'',
+     text:''
+          })
+        }
         const dispatch=useDispatch();
         const user=JSON.parse(localStorage.getItem('profile'));
   const options = {
@@ -35,6 +43,7 @@ const saveChange=(e)=>{
   if(selected.length===0) setError(true);
   else setError(false) ;
 dispatch(createCard({...postData,name:user?.result?.name}));
+clear();
 
 }
 

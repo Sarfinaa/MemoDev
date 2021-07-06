@@ -53,7 +53,7 @@ dispatch(signup(formData,history));
       try{
 dispatch({type:'AUTH',data:{result,token}});
 //after clicking on our account we want to go back to home page thats why we are using history.push()
-history.push('/')
+history.push('/cards')
       }catch(error){
 console.log(error);
       }
