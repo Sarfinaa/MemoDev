@@ -7,6 +7,9 @@ import SelectSearch from "react-select-search";
 import Fuse from "fuse.js";
 import "./search.css";
 import "./New.css";
+import {useDispatch} from 'react-redux'; 
+import {createCard} from '../../actions/cards'
+import {useSelector} from 'react-redux';
 
 function New() {
   const history=useHistory();
@@ -21,15 +24,17 @@ function New() {
     selected:'',
      text:''
         });
+        const dispatch=useDispatch();
+        const user=JSON.parse(localStorage.getItem('profile'));
   const options = {
     keys: ["name"],
   };
 
 const saveChange=(e)=>{
+  e.preventDefault();
   if(selected.length===0) setError(true);
   else setError(false) ;
-setPostData({...postData,selected:selected,text:text});
-
+dispatch(createCard({...postData,name:user?.result?.name}));
 
 }
 
@@ -81,14 +86,14 @@ setPostData({...postData,selected:selected,text:text});
         <h3 className="text1">and learned how to </h3>
         <Input required
           placeholder="what you learned"
-          onChange={(e)=>setPostData({...postData,wul:e.target.value})}
+          onChange={(e)=>setPostData({...postData,wul:e.target.value,selected,text})}
           style={{ width: "14%", fontSize: "small", margin: "0px 5px" }}
           inputProps={{ "aria-label": "description" }}
         />
         <button className="button3" onClick={saveChange}>Save</button>
         </form>
         {error&&<div>error</div>}
-       {console.log(postData)}
+{/* {console.log(postData)} */}
     </div>
   );
 }
