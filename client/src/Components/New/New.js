@@ -11,7 +11,7 @@ import {useDispatch} from 'react-redux';
 import {createCard} from '../../actions/cards'
 import {useSelector} from 'react-redux';
 
-function New() {
+function New({newinCard}) {
   const history=useHistory();
   const [language, setLanguage] = useState("Plain Text");
   const [textlen, setTextlen] = useState(0);
@@ -27,8 +27,8 @@ function New() {
         const clear=()=>{
           setPostData({
             language:'',
-    wul:'',
-    selected:'',
+          wul:'',
+      selected:'',
      text:''
           })
         }
@@ -39,11 +39,11 @@ function New() {
   };
 
 const saveChange=(e)=>{
-  e.preventDefault();
   if(selected.length===0) setError(true);
   else setError(false) ;
 dispatch(createCard({...postData,name:user?.result?.name}));
 clear();
+history.push('/cards');
 
 }
 

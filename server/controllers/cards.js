@@ -21,3 +21,12 @@ res.status(200).json({data:cards});
 res.status(404).json({message:error.message});
 }
  }
+ export const deleteCard = async(req,res)=>{
+    const {id}=req.params;
+    if(!mongoose.Types.ObjectId.isValid(id)) {
+       return res.status(404).send('No post with that Id');
+       }
+    
+       await PostCard.findByIdAndRemove(id);
+       res.json({message:'Post deleted successfully'});
+}

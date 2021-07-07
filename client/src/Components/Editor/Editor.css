@@ -125,7 +125,9 @@ p code {
 span{
   font-size: 1.1rem ;
 }
-
+.code-input,.code-output{
+  height: 350px !important;
+}
 
 /* .button{
     color: #3f3d56;

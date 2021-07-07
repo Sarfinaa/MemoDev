@@ -3,7 +3,6 @@ import Prism from "prismjs";
 import "./Input.css";
 import "prismjs/themes/prism.css";
 //import 'prismjs/components/prism-java'
-import $ from "jquery";
 function Input({ language, changelen,getSelected,getText,setError}) {
   const [content, setContent] = useState("");
   const [selected, setSelected] = useState("");
