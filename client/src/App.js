@@ -5,6 +5,9 @@ import New from './Components/New/New';
 import {BrowserRouter as Router,Switch,Route,Redirect} from 'react-router-dom';
 import Cards from './Components/Cards/Cards';
 import Auth from './Components/Auth/Auth';
+import NoCard from './Components/NoCards/NoCard';
+import Training from './Components/Training/Training';
+
 function App() {
       const user=JSON.parse(localStorage.getItem('profile'));
 
@@ -17,8 +20,8 @@ function App() {
            <Route path='/New' exact component={New}/>
            <Route path='/Cards' exact component={Cards}/>
            <Route path='/auth' exact component={ ()=>(!user?<Auth/>:<Redirect to="/cards"/>)}/>
-
-
+           <Route path='/NoCard' exact component={NoCard}/>
+           <Route path='/Training' exact component={Training}/>
        </Switch>
         
         </Router>
