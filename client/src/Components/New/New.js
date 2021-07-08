@@ -65,7 +65,7 @@ history.push('/cards');
     setLanguage(language);
   };
   return (
-    <div className="container">
+    <div className={`container ${newinCard && "change-container"}`}>
       <div className="container-top">
         <div className="renderedtext">
           {textlen == 0 || textlen > 1 ? (
@@ -83,7 +83,7 @@ history.push('/cards');
           onChange={handleSelectChange}
         />
       </div>
-        <Input1 setError={setError} changelen={(len) => setTextlen(len)} getText={text=>setText(text)} language={language} getSelected={select=>setSelected(select)}/>
+        <Input1 newinCard setError={setError} changelen={(len) => setTextlen(len)} getText={text=>setText(text)} language={language} getSelected={select=>setSelected(select)}/>
         <h3 className="text1">This card is about </h3>
         <form style={{display:'inline'}}>
         <Input required
@@ -99,7 +99,10 @@ history.push('/cards');
           style={{ width: "14%", fontSize: "small", margin: "0px 5px" }}
           inputProps={{ "aria-label": "description" }}
         />
+        <div className="btn-container-edit">
+        <button className="button3" >Cancel</button>
         <button className="button3" onClick={saveChange}>Save</button>
+        </div>
         </form>
         {error&&<div>error</div>}
 {/* {console.log(postData)} */}

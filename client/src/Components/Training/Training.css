@@ -2,12 +2,59 @@
     width: 100%;
     height: 89.3vh;
     background: red;
+    position: absolute;
    
 }
 
 .container-tr{
     background-color: brown;
-    max-width: 80%;
-    height: 93%;
+    margin: 2% auto;
+    padding: 13px;
+    max-width: 62%;
+    height: 570px;
+    position: relative
 }
 
+
+.tr1{
+    background-color: blueviolet;
+    height: 13%;
+    padding: 15px;
+
+}
+
+.t-card-heading{
+    font-weight: 900;
+}
+.t-card-language{
+
+}   
+
+.tr2{
+    background-color: chartreuse;
+    height: 69%;
+}
+.tr3{
+    background-color: darkblue;
+    height: 18%;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-tr3{
+    color: #3f3d56;
+    background-color: #1beca1;
+    padding: 13px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 700;
+    border: none;
+    font-size: .8125rem;
+}
+
+
+
+
+
+ 

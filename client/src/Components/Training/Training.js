@@ -7,12 +7,14 @@ function Training() {
       <div className="main-container-tr">
         <div className="container-tr">
           <div className="tr1">
-              <p>Mummy</p>
+              <p className="t-card-heading">diagonal sum</p>
+              <p className="t-card-language">C++</p>
           </div>
           <div className="tr2">
               
           </div>
           <div className="tr3">
+            <button className='btn-tr3'>Submit</button>
 
           </div>
         </div>

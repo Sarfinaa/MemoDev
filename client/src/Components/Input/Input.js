@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import Prism from "prismjs";
 import "./Input.css";
 import "prismjs/themes/prism.css";
+
 //import 'prismjs/components/prism-java'
-function Input({ language, changelen,getSelected,getText,setError}) {
+function Input({ language,newinCard, changelen,getSelected,getText,setError}) {
   const [content, setContent] = useState("");
   const [selected, setSelected] = useState("");
   const sync_scroll = () => {
@@ -69,13 +70,13 @@ function Input({ language, changelen,getSelected,getText,setError}) {
           <textarea
             placeholder="Type your code here..."
             id="editing"
-            className="code-input"
+            className={newinCard && `code-input`}
             onScroll={sync_scroll}
             value={content}
             onChange={handleChange}
             onKeyDown={handleKeyDown}
           />
-          <pre aria-hidden="true" id="highlighting" className="code-output">
+          <pre aria-hidden="true" id="highlighting" className={newinCard && "code-output"}>
             <code id="highlighting-content" className={`language-${language}`}>
               {content}
             </code>
