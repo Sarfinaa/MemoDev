@@ -2,7 +2,7 @@
     width: 90%;
     border-radius: 7px;
     height: 85px;
-    background: orchid;
+    background: #BFDBF7;
     margin: 2% 5%;
 
     padding: 20px 20px;
@@ -13,11 +13,11 @@
 }
 .cards-component:hover{
     cursor:pointer;
-    background: lightgreen;
+    background: #9CC7E8;
 }
 .component-heading{
     font-weight: 200;
 }
 .active{
-    background-color:red ;
+    background-color: #7BB4E0;
 }

@@ -44,13 +44,13 @@ function Editor({language,value,noPlaceholder}) {
           readOnly={noPlaceholder?true:false}
             placeholder={!noPlaceholder&&"Type your code here..."}
             id="editing"
-            className={noPlaceholder&&'code-input'}
+            className={noPlaceholder&&'code-inputs'}
             onScroll={sync_scroll}
             value={value?value:content}
             onChange={handleChange}
             onKeyDown={handleKeyDown}
           />
-          <pre aria-hidden="true" id="highlighting" className={noPlaceholder&&'code-output'}>
+          <pre aria-hidden="true" id="highlighting" className={noPlaceholder&&'code-outputs'}>
             <code id="highlighting-content" className={`language-${language}`}>
               {value?value:content}
             </code>
