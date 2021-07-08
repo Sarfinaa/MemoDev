@@ -29,6 +29,7 @@
     position: relative;
 }
 .create-card{
+    cursor: pointer;
     width: 90%;
     border-radius: 7px;
     height: 9%;

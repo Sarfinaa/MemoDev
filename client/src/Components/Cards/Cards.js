@@ -9,9 +9,10 @@ import {deleteCard} from '../../actions/cards';
 import Editor from '../Editor/Editor';
 import New from '../New/New'; 
 import NoCard from '../NoCards/NoCard';
-
+import {useHistory} from 'react-router-dom';
 function Cards() {
      const dispatch = useDispatch();
+    const history=useHistory();
      const [edit,setEdit]=useState(false);
      const cards = useSelector(state => state.cards.cards)
      const [currentId,setCurrentId]=useState(cards[0]?._id);
@@ -36,7 +37,7 @@ dispatch(getCards());
             </div>
             <div className="container-cards">
                 <div className="d1">
-                    <div className="create-card">
+                    <div className="create-card" onClick={()=>history.push('/new')}>
                         <h4>Create new card</h4>
                     </div>
                     <div className="cardholder">

@@ -21,9 +21,11 @@ const Navbar = ({ toggle }) => {
     const dispatch=useDispatch();
       const [user,setUser]=useState(JSON.parse(localStorage.getItem('profile')));
         const logout=()=>{
+          history.push('/');
         dispatch({type:'LOGOUT'});
-        history.push('/');
         setUser(null);
+        
+      
     }
        useEffect(()=>{
 const token=user?.token;
