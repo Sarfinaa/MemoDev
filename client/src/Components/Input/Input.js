@@ -4,9 +4,9 @@ import "./Input.css";
 import "prismjs/themes/prism.css";
 
 //import 'prismjs/components/prism-java'
-function Input({ language,newinCard, changelen,getSelected,getText,setError}) {
-  const [content, setContent] = useState("");
-  const [selected, setSelected] = useState("");
+function Input({language,newinCard, changelen,getSelected,getText,setError,card}) {
+  const [content, setContent] = useState(card?card.text:"");
+  const [selected, setSelected] = useState(card?card.selected:"");
   const sync_scroll = () => {
     let element = document.querySelector("#editing");
     let result_element = document.querySelector("#highlighting");
@@ -41,7 +41,7 @@ function Input({ language,newinCard, changelen,getSelected,getText,setError}) {
 
   useEffect(() => {
     Prism.highlightAll();
-  }, [language, content]);
+  }, [language, content,card]);
 
   let ar = [];
   const displaySelect = () => {

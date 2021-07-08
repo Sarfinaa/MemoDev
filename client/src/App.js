@@ -20,8 +20,7 @@ function App() {
            <Route path='/New' exact component={New}/>
            <Route path='/Cards' exact component={Cards}/>
            <Route path='/auth' exact component={ ()=>(!user?<Auth/>:<Redirect to="/cards"/>)}/>
-           <Route path='/NoCard' exact component={NoCard}/>
-           <Route path='/Training' exact component={Training}/>
+           <Route path='/Train' exact component={Training}/>
        </Switch>
         
         </Router>

@@ -1,4 +1,4 @@
-import {CREATE,FETCH_ALL,DELETE} from '../constants/actionTypes';
+import {CREATE,FETCH_ALL,DELETE,UPDATE} from '../constants/actionTypes';
 const reducer =(state={//isLoading:true,
     cards:[]},action)=>{
     switch(action.type){
@@ -13,9 +13,8 @@ const reducer =(state={//isLoading:true,
         } 
         case CREATE: return {...state,cards:[...state.cards,action.payload]};
         case DELETE: return {...state,cards:state.cards.filter(card=>card._id!==action.payload)};
-        // case LIKE: return {...state,cards:state.cards.map((card)=>card._id===action.payload._id?action.payload:card )}; 
-        // case UPDATE: 
-        //    return {...state,cards:state.cards.map((card)=>card._id===action.payload._id?action.payload:card )}; 
+        case UPDATE: 
+           return {...state,cards:state.cards.map((card)=>card._id===action.payload._id?action.payload:card )}; 
       default: return state;
     }
     }

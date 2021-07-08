@@ -7,7 +7,8 @@ import { getCards } from '../../actions/cards';
 import {  useDispatch} from "react-redux";
 import {deleteCard} from '../../actions/cards';
 import Editor from '../Editor/Editor';
-import New from '../New/New';
+import New from '../New/New'; 
+import NoCard from '../NoCards/NoCard';
 
 function Cards() {
      const dispatch = useDispatch();
@@ -20,6 +21,11 @@ dispatch(getCards());
   },[dispatch])
   const handleEdit=()=>{
       setEdit(true);
+  }
+  if(cards.length===0){
+      return (
+          <NoCard/>
+      )
   }
     return (
         <div className="whole-container">
@@ -35,7 +41,7 @@ dispatch(getCards());
                     </div>
                     <div className="cardholder">
                       {cards.map(card =>(                    
-                          <Card  key={card._id} card={card} isActive={currentId==card._id} setCurrentId={setCurrentId}/>
+                          <Card setEdit={setEdit} key={card._id} card={card} isActive={currentId==card._id} setCurrentId={setCurrentId}/>
                       ))}
                    
                     </div>
@@ -57,7 +63,7 @@ dispatch(getCards());
                          </>
                     
                     ):(
-                       <New newinCard/>
+                       <New  currentId={currentId} setCurrentId={setCurrentId} setEdit={setEdit} newinCard/>
 
                     )}
                     

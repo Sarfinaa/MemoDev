@@ -1,4 +1,4 @@
-import {CREATE,FETCH_ALL,DELETE} from '../constants/actionTypes';
+import {CREATE,FETCH_ALL,DELETE,UPDATE} from '../constants/actionTypes';
 import * as api from '../api/index';
 export const createCard=(post)=>async(dispatch)=>{
     try{
@@ -31,5 +31,13 @@ dispatch({type:DELETE,payload:id});
   }catch(error){
       console.log(error)
 
+  }
+}
+export const updateCard=(id,post)=>async(dispatch)=>{
+  try{
+      const {data} =await api.updateCard(id,post);
+      dispatch({type:UPDATE,payload:data});
+  }catch(error){
+      console.log(error);
   }
 }

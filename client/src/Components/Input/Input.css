@@ -74,7 +74,7 @@ p code {
 }
 
 #editing{
-  position: relative;
+  position: absolute;
 }
 
 .selectedtext{
