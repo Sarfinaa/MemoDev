@@ -26,7 +26,6 @@ checkCorrect();
 setShowButtons(true);
 } 
 const handleNext=()=>{
-   console.log("Ref variable",clearRef.clear());
   if(counter<cards?.length)
   setCounter(counter+1);
   setReadOnly(false);
