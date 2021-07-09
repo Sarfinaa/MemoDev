@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Prism from "prismjs";
 import "./Editor.css";
 import "prismjs/themes/prism.css";
-function Editor({language,value,noPlaceholder}) {
+function Editor({language,value,noPlaceholder,getContent,placeholder,readonly}) {
     const [content, setContent] = useState("");
     const sync_scroll = () => {
         let element = document.querySelector("#editing");
@@ -28,10 +28,14 @@ function Editor({language,value,noPlaceholder}) {
           setContent(value);
         }
       };
+      const clear=()=>{
+        setContent('');
+      }
     
       const handleChange = (evt) => {
         sync_scroll();
         setContent(evt.target.value);
+        getContent(evt.target.value);
       };
     
       useEffect(() => {
@@ -40,9 +44,11 @@ function Editor({language,value,noPlaceholder}) {
     
       return (
         <div className={`code-edit-container ` }>
-          <textarea
-          readOnly={noPlaceholder?true:false}
-            placeholder={!noPlaceholder&&"Type your code here..."}
+          <textarea r
+          //ref={clearRef}
+        
+          readOnly={(noPlaceholder||readonly)?true:false}
+            placeholder={!noPlaceholder?placeholder:undefined}
             id="editing"
             className={noPlaceholder&&'code-inputs'}
             onScroll={sync_scroll}
@@ -58,5 +64,5 @@ function Editor({language,value,noPlaceholder}) {
         </div>
     )
 }
-
-export default Editor
+//const forwardEditor=React.forwardRef(Editor);
+export default Editor;
