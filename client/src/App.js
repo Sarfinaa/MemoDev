@@ -7,7 +7,7 @@ import Cards from './Components/Cards/Cards';
 import Auth from './Components/Auth/Auth';
 import NoCard from './Components/NoCards/NoCard';
 import Training from './Components/Training/Training';
-import Finished from './Components/Finished/Finished';
+
 
 function App() {
       const user=JSON.parse(localStorage.getItem('profile'));
@@ -22,7 +22,7 @@ function App() {
            <Route path='/Cards' exact component={Cards}/>
            <Route path='/auth' exact component={ ()=>(!user?<Auth/>:<Redirect to="/cards"/>)}/>
            <Route path='/Train' exact component={Training}/>
-           <Route path='/Finished' exact component={Finished}/>
+           
        </Switch>
         
         </Router>

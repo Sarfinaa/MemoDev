@@ -11,6 +11,7 @@ import {
   ArrowRight,
 } from "./HeroElement";
 import { Button } from "./ButtonElements";
+import "./hero.css"
 
 
 const HeroSection = () => {
@@ -26,7 +27,8 @@ const HeroSection = () => {
         <VideoBg autoPlay loop muted src={Video} type="video/mp4" />
       </HeroBg>
       <HeroContent>
-        <HeroH1>NEVER FORGET WHAT YOU LEARN</HeroH1>
+     
+        <HeroH1>NEVER FORGET WHAT<br></br>YOU LEARN</HeroH1>
         <HeroBtnWrapper>
         <Button to="signup"
         primary= "true"

@@ -5,12 +5,12 @@ import { MdKeyboardArrowRight, MdArrowForward } from "react-icons/md";
 </style>
 
 export const HeroContainer = styled.div`
-  background: #0c0c0c;
+  background: #1C3041;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0 30px;
-  height: 683px;
+  height: 89.3vh;
   position: relative;
   z-index: 1;
 `;
@@ -47,7 +47,7 @@ export const HeroContent = styled.div`
 export const HeroH1 = styled.h1`
   color: #fff;
   font-size: 48px;
-  font-family: 'Tourney', cursive;
+  font-family: 'Zen Tokyo Zoo', cursive;
   text-align: center;
 
   @media screen and (max-width: 768px) {

@@ -27,6 +27,9 @@
     height: 17%;
     padding: 15px;
 
+    display: flex;
+    justify-content: space-between;
+
 }
 
 .t-card-heading{
@@ -35,6 +38,14 @@
 .t-card-language{
 
 }   
+.card-counter{
+    height: fit-content;
+    width: fit-content;
+    padding: 5px 7px;
+    background-color: #F7F9F9;
+    border-radius: 6px;
+    
+}
 
 .tr2{
     margin-top: 15px;

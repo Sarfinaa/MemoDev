@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import "./Training.css";
 import Editor from "../Editor/Editor";
 import { useSelector } from "react-redux";
-import Finished from "../Finished/Finished";
+import NoCard from "../NoCards/NoCard";
 function Training() {
   const cards = useSelector((state) => state.cards.cards);
   const [counter, setCounter] = useState(0);
@@ -42,16 +42,22 @@ function Training() {
     else setCorrect(false);
   };
   if (finished) {
-    return (<Finished />)
+    return (<NoCard inTrain/>)
   }
   return (
     <div>
       <div className="main-container-tr">
         <div className="container-tr">
           <div className="tr1">
+            <div>
             <p className="t-card-heading">{card?.wul}</p>
             <p className="t-card-language">{card?.language}</p>
+            </div>
+            <div className="card-counter">
+                        <h2>Card {counter+1}</h2>
           </div>
+          </div>
+          
           <div className="tr2">
             { !showbuttons&&<Editor 
               clearRef={clearRef}

@@ -52,6 +52,7 @@ dispatch(getCards());
                         <p>{card?.wul}</p>
                         <div className="language">{card?.language}</div>
                     </div>
+                    
                     {!edit?(
                         <>
                     <div>
