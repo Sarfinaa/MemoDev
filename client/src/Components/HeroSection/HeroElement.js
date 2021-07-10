@@ -1,8 +1,6 @@
 import styled from "styled-components";
 import { MdKeyboardArrowRight, MdArrowForward } from "react-icons/md";
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Tourney&display=swap');
-</style>
+
 
 export const HeroContainer = styled.div`
   background: #1C3041;

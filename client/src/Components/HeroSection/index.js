@@ -11,7 +11,7 @@ import {
   ArrowRight,
 } from "./HeroElement";
 import { Button } from "./ButtonElements";
-import "./hero.css"
+
 
 
 const HeroSection = () => {
