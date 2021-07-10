@@ -1,5 +1,8 @@
 import styled from "styled-components";
 import { MdKeyboardArrowRight, MdArrowForward } from "react-icons/md";
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Tourney&display=swap');
+</style>
 
 export const HeroContainer = styled.div`
   background: #0c0c0c;
@@ -44,6 +47,7 @@ export const HeroContent = styled.div`
 export const HeroH1 = styled.h1`
   color: #fff;
   font-size: 48px;
+  font-family: 'Tourney', cursive;
   text-align: center;
 
   @media screen and (max-width: 768px) {

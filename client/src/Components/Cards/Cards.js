@@ -49,7 +49,7 @@ dispatch(getCards());
                 </div>
                 <div className="d2">
                     <div className="make-function">
-                        <h1>{card?.wul}</h1>
+                        <p>{card?.wul}</p>
                         <div className="language">{card?.language}</div>
                     </div>
                     {!edit?(

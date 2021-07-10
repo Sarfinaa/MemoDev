@@ -1,11 +1,15 @@
 .cards-component{
     width: 90%;
     border-radius: 7px;
-    height: 85px;
+    height: fit-content;
     background: #BFDBF7;
     margin: 2% 5%;
 
+    overflow-wrap: break-word;
+
     padding: 20px 20px;
+
+    display: block;
     
     /* display: flex;
     align-items: center;
@@ -17,6 +21,8 @@
 }
 .component-heading{
     font-weight: 200;
+    font-size: 1.2rem;
+    padding-bottom: 10px;
 }
 .active{
     background-color: #7BB4E0;

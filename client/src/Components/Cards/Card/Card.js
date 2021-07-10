@@ -9,8 +9,8 @@ function Card({card,setCurrentId,isActive,setEdit}) {
             setEdit(false);
             setCurrentId(card._id);
           }}>
-                <h2 className="component-heading">{card.wul}</h2>
-                <p>{card.language}</p>
+                <p className="component-heading">{card.wul}</p>
+                <p style={{color: "white"}}>{card.language}</p>
             </div>
         </>
     )
