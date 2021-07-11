@@ -9,7 +9,7 @@ import {deleteCard} from '../../actions/cards';
 import Editor from '../Editor/Editor';
 import New from '../New/New'; 
 import NoCard from '../NoCards/NoCard';
-import {useHistory} from 'react-router-dom';
+import {useHistory,Redirect} from 'react-router-dom';
 function Cards() {
      const dispatch = useDispatch();
     const history=useHistory();
@@ -31,7 +31,7 @@ dispatch(getCards());
     return (
         <div className="whole-container">
             <div>
-                <button className="train-btn">
+                <button onClick={()=><Redirect to="/Train"/>}className="train-btn">
                     Train Now
                 </button>
             </div>

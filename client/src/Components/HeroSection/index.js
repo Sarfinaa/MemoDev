@@ -30,7 +30,7 @@ const HeroSection = () => {
      
         <HeroH1>NEVER FORGET WHAT<br></br>YOU LEARN</HeroH1>
         <HeroBtnWrapper>
-        <Button to="signup"
+        <Button to="/auth"
         primary= "true"
         dark= "true"
         onMouseEnter={onHover} onMouseLeave={onHover}>

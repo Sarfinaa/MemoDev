@@ -47,7 +47,7 @@ setUser(JSON.parse(localStorage.getItem('profile')));
              {user&& <NavLinks to="/Cards">Cards</NavLinks>}
             </NavItem>
             <NavItem>
-{user&&<NavLinks to="/Train">Train</NavLinks>}
+{/* {user&&<NavLinks to="/Train">Train</NavLinks>} */}
             </NavItem>
           </NavMenu>
           <NavBtn>
