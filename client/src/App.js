@@ -20,10 +20,10 @@ useEffect(()=>{
        <Switch>
            <Route path='/' exact component={()=><Redirect to="/Home"/>}/>
            <Route path='/Home' exact component={ ()=>(!users?<Home/>:<Redirect to="/cards"/>)}/>
-           <Route path='/New' exact component={()=>(!users?<Redirect to="/Home"/>:<New/>)}/>
-           <Route path='/Cards' exact component={()=>(!users?<Home/>:<Cards/>)}/>
+           <Route path='/New' exact component={New}/>
+           <Route path='/Cards' exact component={Cards}/>
            <Route path='/auth' exact component={ ()=>(!users?<Auth/>:<Redirect to="/cards"/>)}/>
-           <Route path='/Train' exact component={()=>(!users?<Redirect to="/Home"/>:<Training/>)}/>
+           <Route path='/Train' exact component={Training}/>
            
        </Switch>
         

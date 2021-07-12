@@ -1,5 +1,5 @@
 import axios from 'axios';
-const API=axios.create({baseURL:"http://localhost:5000"});
+const API=axios.create({baseURL:"https://memocode.herokuapp.com"});
 //middleware dont work without it and it happen on each request
 API.interceptors.request.use((req)=>{
 if(localStorage.getItem('profile')){
