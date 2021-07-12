@@ -31,8 +31,8 @@ dispatch(getCards());
     return (
         <div className="whole-container">
             <div>
-                <button onClick={()=><Redirect to="/Train"/>}className="train-btn">
-                    Train Now
+                <button onClick={()=>history.push('/Train')}className="train-btn">
+                    Train Nows
                 </button>
             </div>
             <div className="container-cards">

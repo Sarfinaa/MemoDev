@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Video from "../../videos/video.mp4";
+import { useHistory } from "react-router";
 import {
   HeroContainer,
   HeroBg,
@@ -15,6 +16,7 @@ import { Button } from "./ButtonElements";
 
 
 const HeroSection = () => {
+  const history=useHistory();
   const [hover, setHover] = useState(false);
 
   const onHover = () => {
@@ -30,7 +32,7 @@ const HeroSection = () => {
      
         <HeroH1>NEVER FORGET WHAT<br></br>YOU LEARN</HeroH1>
         <HeroBtnWrapper>
-        <Button to="/auth"
+        <Button onClick={()=>history.push('/auth')}
         primary= "true"
         dark= "true"
         onMouseEnter={onHover} onMouseLeave={onHover}>
